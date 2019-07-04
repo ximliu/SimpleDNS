@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FFF2022-3D9A-4836-893E-1851918DD3B7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SimpleDNS</RootNamespace>
+    <AssemblyName>SimpleDNS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3rd\DnsClient.NET\DnsDatagramReader.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsDatagramWriter.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsHeaderFlag.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsMessageHandler.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsOpCode.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsQueryExtensions.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsQueryResponse.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsQuestion.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsRecordFactory.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsRequestHeader.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsRequestMessage.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsResponseCode.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsResponseHeader.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsResponseMessage.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsString.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsTcpMessageHandler.cs" />
+    <Compile Include="3rd\DnsClient.NET\DnsUdpMessageHandler.cs" />
+    <Compile Include="3rd\DnsClient.NET\IDnsQuery.cs" />
+    <Compile Include="3rd\DnsClient.NET\IDnsQueryResponse.cs" />
+    <Compile Include="3rd\DnsClient.NET\ILookupClient.cs" />
+    <Compile Include="3rd\DnsClient.NET\Internal\PooledBytes.cs" />
+    <Compile Include="3rd\DnsClient.NET\Internal\StringBuilderObjectPool.cs" />
+    <Compile Include="3rd\DnsClient.NET\Interop\DisposableIntPtr.cs" />
+    <Compile Include="3rd\DnsClient.NET\Interop\Interop.Libraries.cs" />
+    <Compile Include="3rd\DnsClient.NET\Interop\Linux\RowConfigReader.cs" />
+    <Compile Include="3rd\DnsClient.NET\Interop\Linux\StringParsingHelper.Dns.cs" />
+    <Compile Include="3rd\DnsClient.NET\Interop\Windows\IpHlpApi\FixedNetworkInformation.cs" />
+    <Compile Include="3rd\DnsClient.NET\Interop\Windows\IpHlpApi\Interop.IpHlpApi.cs" />
+    <Compile Include="3rd\DnsClient.NET\IpAddressExtensions.cs" />
+    <Compile Include="3rd\DnsClient.NET\LookupClient.cs" />
+    <Compile Include="3rd\DnsClient.NET\NameServer.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\AaaaRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\AddressRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\AfsDbRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\ARecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\CaaRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\CNameRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\DnsResourceRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\EmptyRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\HinfoRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\MbRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\MgRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\MInfoRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\MrRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\MXRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\NsRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\NullRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\Options\OptRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\PtrRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\ResourceRecordType.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\RpRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\SoaRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\SrvRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\SshfpRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\TxtRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\UriRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\Protocol\WksRecord.cs" />
+    <Compile Include="3rd\DnsClient.NET\QueryClass.cs" />
+    <Compile Include="3rd\DnsClient.NET\QueryType.cs" />
+    <Compile Include="3rd\DnsClient.NET\ResourceRecordCollectionExtensions.cs" />
+    <Compile Include="3rd\DnsClient.NET\ResponseCache.cs" />
+    <Compile Include="3rd\DnsClient.NET\StaticLog.cs" />
+    <Compile Include="3rd\DnsClient.NET\TaskExtensions.cs" />
+    <Compile Include="3rd\DNS\Client\ClientRequest.cs" />
+    <Compile Include="3rd\DNS\Client\ClientResponse.cs" />
+    <Compile Include="3rd\DNS\Client\DnsClient.cs" />
+    <Compile Include="3rd\DNS\Client\RequestResolver\IRequestResolver.cs" />
+    <Compile Include="3rd\DNS\Client\RequestResolver\NullRequestResolver.cs" />
+    <Compile Include="3rd\DNS\Client\RequestResolver\TcpRequestResolver.cs" />
+    <Compile Include="3rd\DNS\Client\RequestResolver\UdpRequestResolver.cs" />
+    <Compile Include="3rd\DNS\Client\ResponseException.cs" />
+    <Compile Include="3rd\DNS\Protocol\CharacterString.cs" />
+    <Compile Include="3rd\DNS\Protocol\Domain.cs" />
+    <Compile Include="3rd\DNS\Protocol\Header.cs" />
+    <Compile Include="3rd\DNS\Protocol\IMessage.cs" />
+    <Compile Include="3rd\DNS\Protocol\IMessageEntry.cs" />
+    <Compile Include="3rd\DNS\Protocol\IRequest.cs" />
+    <Compile Include="3rd\DNS\Protocol\IResponse.cs" />
+    <Compile Include="3rd\DNS\Protocol\Marshalling\EndianAttribute.cs" />
+    <Compile Include="3rd\DNS\Protocol\Marshalling\Endianness.cs" />
+    <Compile Include="3rd\DNS\Protocol\Marshalling\Struct.cs" />
+    <Compile Include="3rd\DNS\Protocol\OperationCode.cs" />
+    <Compile Include="3rd\DNS\Protocol\Question.cs" />
+    <Compile Include="3rd\DNS\Protocol\RecordClass.cs" />
+    <Compile Include="3rd\DNS\Protocol\RecordType.cs" />
+    <Compile Include="3rd\DNS\Protocol\Request.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\BaseResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\CanonicalNameResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\IPAddressResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\IResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\MailExchangeResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\NameServerResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\PointerResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\ResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\ResourceRecordFactory.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\StartOfAuthorityResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResourceRecords\TextResourceRecord.cs" />
+    <Compile Include="3rd\DNS\Protocol\Response.cs" />
+    <Compile Include="3rd\DNS\Protocol\ResponseCode.cs" />
+    <Compile Include="3rd\DNS\Protocol\Utils\ByteExtensions.cs" />
+    <Compile Include="3rd\DNS\Protocol\Utils\ByteStream.cs" />
+    <Compile Include="3rd\DNS\Protocol\Utils\ObjectStringifier.cs" />
+    <Compile Include="3rd\DNS\Protocol\Utils\TaskExtensions.cs" />
+    <Compile Include="3rd\DNS\Server\DnsServer.cs" />
+    <Compile Include="3rd\DNS\Server\MasterFile.cs" />
+    <Compile Include="Resolver.cs" />
+    <Compile Include="SimpleDNS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
